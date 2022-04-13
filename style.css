@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body,
 h1,
 p {
@@ -11,8 +15,8 @@ p {
   font-weight: inherit;
 }
 
-body {
-  box-sizing: border-box;
+a {
+  text-decoration: none;
 }
 
 .wrapper {
@@ -22,12 +26,185 @@ body {
   border-radius: 10px;
 }
 
-.header_title {
-  font-size: 16px;
+.header {
+  position: relative;
+  width: 100%;
+  text-align: center;
   border-bottom: 1px solid #c4c4c4;
-  padding: 18px 187px;
+  padding: 18px 0;
+}
+
+.header_title {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.header_title::after {
+  content: '';
+  display: inline-block;
+  background-image: url(image/close.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 19px;
+  right: 16px;
+}
+
+.main {
+  padding: 20px 24px;
 }
 
 .main_text {
   font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.id,
+.password {
+  display: block;
+  width: 100%;
+  padding: 15px 16px;
+  margin-bottom: 10px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-status {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  padding: 0 4px;
+}
+
+.login-status::before {
+  content: '';
+  display: inline-block;
+  background-image: url(image/check-box.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 22px;
+  height: 22px;
+  vertical-align: -5px;
+  margin-right: 8px;
+}
+
+.login {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  background-color: #2f80ed;
+  border-radius: 5px;
+  color: white;
+  padding: 14px 0;
+  margin-bottom: 19px;
+  text-align: center;
+}
+
+.join_find {
+  text-align: center;
+}
+
+.join,
+.find {
+  font-size: 14px;
+  color: #767676;
+}
+
+.join::after {
+  content: '|';
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.or {
+  text-align: center;
+  position: relative;
+  font-size: 14px;
+  color: #767676;
+  margin-top: 28px;
+}
+
+.or::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  width: 44%;
+  height: 1px;
+  background-color: #767676;
+}
+
+.or::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  width: 44%;
+  height: 1px;
+  background-color: #767676;
+}
+
+.google,
+.facebook,
+.naver,
+.kakao {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #767676;
+  padding: 15px 0;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.google {
+  margin-top: 20px;
+  border-color: #767676;
+}
+
+.facebook {
+  border-color: #2d9cdb;
+}
+
+.naver {
+  border-color: #00bf18;
+}
+
+.kakao {
+  border-color: #f2c94c;
+}
+
+.google::before {
+  content: url(image/Google.png);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.facebook::before {
+  content: url(image/facebook.png);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.naver::before {
+  content: url(image/naver-logo.png);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.kakao::before {
+  content: url(image/message-circle.png);
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
