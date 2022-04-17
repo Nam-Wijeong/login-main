@@ -75,21 +75,38 @@ a {
 
 .login-status {
   margin-top: 16px;
-  margin-bottom: 20px;
-  padding: 0 4px;
-}
-
-.login-status::before {
-  content: '';
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  /* border: 1px solid #767676;
+  border-radius: 50%; */
   display: inline-block;
+  cursor: pointer;
   background-image: url(image/check-box.png);
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
-  background-size: contain;
-  width: 22px;
-  height: 22px;
-  vertical-align: -5px;
-  margin-right: 8px;
+}
+
+#login-checkbox[type='checkbox']:checked + .login-status {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  background-image: url(image/check-box2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#login-checkbox {
+  display: none;
+}
+
+.login-status-text {
+  display: inline-block;
+  vertical-align: 4px;
+  color: #767676;
 }
 
 .login {
@@ -100,7 +117,7 @@ a {
   border-radius: 5px;
   color: white;
   padding: 14px 0;
-  margin-bottom: 19px;
+  margin: 20px 0px;
   text-align: center;
 }
 
