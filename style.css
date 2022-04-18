@@ -20,6 +20,7 @@ a {
 }
 
 .wrapper {
+  position: relative;
   width: 520px;
   margin: 80px auto;
   border: 1px solid #c4c4c4;
@@ -39,18 +40,18 @@ a {
   font-size: 16px;
 }
 
-.header_title::after {
-  content: '';
-  display: inline-block;
-  background-image: url(image/close.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+.close-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 21px;
+  right: 23px;
+}
+
+.close-img {
   width: 16px;
   height: 16px;
-  position: absolute;
-  top: 19px;
-  right: 16px;
 }
 
 .main {
@@ -73,7 +74,7 @@ a {
   font-size: 16px;
 }
 
-.login-status {
+/* .login-status {
   margin-top: 16px;
   margin-right: 8px;
   width: 20px;
@@ -84,27 +85,36 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+} */
+
+.txt_hide {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.login-status::before {
+  content: '';
+  display: inline-block;
+  background-image: url(image/check-box.png);
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  vertical-align: -5px;
+}
+
+.login-status {
+  display: inline-block;
+  margin-top: 16px;
+  color: #767676;
 }
 
 #login-checkbox[type='checkbox']:checked + .login-status {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  cursor: pointer;
   background-image: url(image/check-box2.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-#login-checkbox {
-  display: none;
-}
-
-.login-status-text {
-  display: inline-block;
-  vertical-align: 4px;
-  color: #767676;
 }
 
 .login {
