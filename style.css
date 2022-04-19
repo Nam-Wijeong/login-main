@@ -4,7 +4,8 @@
 
 body,
 h1,
-p {
+p,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -17,6 +18,10 @@ p {
 
 a {
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 .wrapper {
@@ -73,19 +78,6 @@ a {
   border-radius: 5px;
   font-size: 16px;
 }
-
-/* .login-status {
-  margin-top: 16px;
-  margin-right: 8px;
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  cursor: pointer;
-  background-image: url(image/check-box.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-} */
 
 .txt_hide {
   position: absolute;
@@ -171,63 +163,67 @@ a {
   background-color: #c4c4c4;
 }
 
-.google,
-.facebook,
-.naver,
-.kakao {
-  position: relative;
+a[class^='link'] {
   display: block;
   font-size: 16px;
   text-align: center;
   border: 1px solid;
   border-radius: 5px;
   color: #767676;
-  padding: 15px 0;
-  margin: 10px 0;
+  padding: 15px 14px;
+  margin-bottom: 10px;
   width: 100%;
 }
 
-.google {
+/* 이미지 스프라이트 레티나 대응하여 적용하기 */
+/* 1배수, 2배수 이미지 스프라이트를 준비 */
+a[class^='link']::before {
+  display: block;
+  content: '';
+  float: left;
+  margin-left: 4px;
+  background-image: url(image/css_sprites_10px.png);
+  background-repeat: no-repeat;
+  background-size: 76px 76px;
+}
+
+.sns_login .link_google {
   margin-top: 20px;
   border-color: #767676;
 }
 
-.facebook {
+.sns_login .link_facebook {
   border-color: #2d9cdb;
 }
 
-.naver {
+.sns_login .link_naver {
   border-color: #00bf18;
 }
 
-.kakao {
+.sns_login .link_kakao {
   border-color: #f2c94c;
 }
 
-.google::before {
-  content: url(image/Google.png);
-  position: absolute;
-  top: 10px;
-  left: 10px;
+.link_google::before {
+  width: 28px;
+  height: 28px;
+  background-position: -5px -8px;
 }
 
-.facebook::before {
-  content: url(image/facebook.png);
-  position: absolute;
-  top: 10px;
-  left: 10px;
+.link_facebook::before {
+  width: 28px;
+  height: 28px;
+  background-position: -43px -8px;
 }
 
-.naver::before {
-  content: url(image/naver-logo.png);
-  position: absolute;
-  top: 10px;
-  left: 10px;
+.link_naver::before {
+  width: 28px;
+  height: 28px;
+  background-position: -5px -46px;
 }
 
-.kakao::before {
-  content: url(image/message-circle.png);
-  position: absolute;
-  top: 10px;
-  left: 10px;
+.link_kakao::before {
+  width: 28px;
+  height: 28px;
+  background-position: -43px -46px;
 }
